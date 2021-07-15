@@ -3,6 +3,7 @@ Published in : Digital Economy and Decision Analytics
 Description :
 - Demonstrate decision tree 
 - Demonstrate applied SVM on NLP sentiment classification
+- Plot some activation functions for Neural Networks
 
 Keywords :
 - Python

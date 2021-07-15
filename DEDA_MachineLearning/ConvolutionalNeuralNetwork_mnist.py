@@ -1,30 +1,27 @@
-"""
-Python Version: 3.8.5
-Tensorflow version: 2.4.1
-Keras is integrated into Tensorflow currently.
-"""
-from tensorflow.keras.datasets import mnist
-from tensorflow.keras.utils import to_categorical, plot_model
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Convolution2D, MaxPooling2D
-from tensorflow.keras.layers import Activation, Flatten, Dense, Dropout
-from tensorflow.keras.layers import BatchNormalization
+from keras.datasets import mnist
+from keras.utils import np_utils
+from keras.utils.vis_utils import plot_model
+
+from keras.models import Sequential
+from keras.layers.convolutional import Convolution2D, MaxPooling2D
+from keras.layers import Activation, Flatten, Dense, Dropout
+from keras.layers.normalization import BatchNormalization
 import numpy as np
 import time
-from tensorflow.keras.layers import SimpleRNN, Activation, Dense
+from keras.layers import SimpleRNN, Activation, Dense
 import matplotlib.pyplot as plt
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 
 
 def trainning_process(model_history):
-    fig = plt.figure(figsize=(16, 5))
+    fig = plt.figure(figsize=(15, 5))
     # Accuracy Increasing
     plt.subplot(1, 2, 1)
     plt.plot(range(1, epochs + 1), model_history.history['accuracy'], 'blue')
     plt.plot(range(1, epochs + 1), model_history.history['val_accuracy'], 'red')
     plt.title('Model Accuracy')
     plt.ylabel('Accuracy', fontsize=15)
-    plt.yticks(fontsize=15)
+    plt.yticks(fontsize=18)
     plt.xlabel('Epoch', fontsize=15)
     plt.xticks(np.arange(1, epochs + 1), fontsize=15)
     # Loss Decreasing
@@ -32,11 +29,9 @@ def trainning_process(model_history):
     plt.plot(range(1, epochs + 1), model_history.history['loss'], 'blue')
     plt.plot(range(1, epochs + 1), model_history.history['val_loss'], 'red')
     plt.title('Model Loss')
-    plt.ylabel('Categorical Cross-Entropy', fontsize=15)
-    plt.yticks(fontsize=15)
+    plt.ylabel('Loss', fontsize=15)
     plt.xlabel('Epoch', fontsize=15)
     plt.xticks(np.arange(1, epochs + 1), fontsize=15)
-    plt.tight_layout()
     plt.show()
     return fig
 
@@ -59,8 +54,8 @@ pool_size = (2, 2)
 kernel_size = (3, 3)
 input_shape = (row_size, col_size, 1)
 num_classes = 10
-batch_size = 128  # Number of sample used to update gradient
-epochs = 24  # Number of iterations
+batch_size = 128
+epochs = 12
 
 # data pre-processing
 X_train = X_train.reshape(train_sample_size, *input_shape).astype('float32')
@@ -69,8 +64,8 @@ X_test = X_test.reshape(test_sample_size, *input_shape).astype('float32')
 X_train = X_train / 255
 X_test = X_test / 255
 # Transform label set into binary representation, or so called "One-hot encoding"
-y_train = to_categorical(y_train, num_classes=10)
-y_test = to_categorical(y_test, num_classes=10)
+y_train = np_utils.to_categorical(y_train, num_classes=10)
+y_test = np_utils.to_categorical(y_test, num_classes=10)
 
 # build RNN model
 model = Sequential()
@@ -100,21 +95,18 @@ model.compile(optimizer='adam',
 
 # training
 start_time = time.time()
-model_result = model.fit(X_train, y_train,
-                         batch_size=batch_size,
-                         epochs=epochs,
-                         verbose=1,
+model_result = model.fit(X_train, y_train, batch_size=batch_size, epochs=epochs, verbose=1,
                          validation_data=(X_test, y_test))
 end_time = time.time()
-print(f'Training takes {round((end_time - start_time) / 60, 1)} minutes to complete')
-process_plot = trainning_process(model_history=model_result)
-process_plot.savefig('DEDA_MachineLearning/trainning_process_plot.png', dpi=300)
+process_plot = trainning_process(model_result)
+process_plot.savefig('trainning_process_plot.png', dpi=300)
+print(
+    f'Training takes {round((end_time - start_time)/60, 1)} minutes to complete')  # Takes about two minutes to finish
 validation_acc = model_result.history['val_accuracy'][-1]
-print(f'The final accuracy is {validation_acc * 100}%')
-# The final cross validation accuracy is 94.24%
-model.save('DEDA_MachineLearning/cnn_model.h5')
+print(f'The final accuracy is {validation_acc*100}%')  # The final cross validation accuracy is 93.51%
+model.save('cnn_model.h5')
 
 # ============Load Trained Model=============
-model_loaded = load_model('DEDA_MachineLearning/cnn_model.h5')
+model_loaded = load_model('cnn_model.h5')
 test_accu = model_loaded.evaluate(X_test, y_test)
 print(f'Test Accuracy is: {test_accu[1]}')
