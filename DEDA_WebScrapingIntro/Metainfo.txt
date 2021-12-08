@@ -1,8 +1,6 @@
 Name of Quantlet : DEDA_WebScrapingIntro
 Published in : Digital Economy and Decision Analytics
-Description :
-- Demonstrate getting data from webpage API and scraping news information from nasdaq.com
-- Introducing functional programming and object-oriented programming
+Description : UNIT 3 and UNIT 4 of DEDA. Introduce webscraping and object-oriented programming 
 Keywords :
 - Python
 - Teaching
@@ -12,4 +10,7 @@ Keywords :
 - HTML
 - BeautifulSoup
 - OOP
-Author : Junjie Hu, Cathy YH Chen
+Author : Junjie Hu, Cathy YH Chen, Isabell Fetzer
+
+
+
