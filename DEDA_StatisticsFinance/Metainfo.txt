@@ -1,12 +1,11 @@
 Name of Quantlet : DEDA_StatisticsFinance
 Published in : Digital Economy and Decision Analytics
-Description :
+Description : UNIT 5 of DEDA. Basic Statistics and Visualisation in Pyhton
 - Demonstrate Linear Opearation and Fourier Transform Using Nympy
 - Draw plot normal distributed random variables and sample's PDF and CDF using Matplotlib
 - Demonstrate different kernel density estimations
 - Use Black-Scholes Model to price options
 - Simulate implied volatility and plot volatility smile
-
 Keywords :
 - Python
 - Teaching
@@ -17,5 +16,4 @@ Keywords :
 - KDE
 - Black-Scholes
 - Implied Volatility
-
-Author : Junjie Hu, Yves Hilpisch, Justin Hellermann
+Author : Junjie Hu, Yves Hilpisch, Justin Hellermann, Isabell Fetzer 
