@@ -6,43 +6,49 @@ Authors: Junjie Hu and Isabell Fetzer
 
 
 """
-Generating Numbers
+Interactive Graphs
 """
 """
-NumPy offers the random module for random sampling. To generate random arrays use the randint() method. The size parameter specifies the dimension of the array. The choice() method also allows you to return an array of values.
+Plotly enables Python users to create beautiful interactive visualisations.
 """
-import numpy as np
-# Set seed from comparability
-np.random.seed(1) 
-# Generate a 3*5 matrix that consists of the values (1, 4, 7, and 10)
-X = np.random.choice([1, 4, 7, 10], size=(3, 5)) 
-print(X)
-# Generate a 20*20 matrix with uniformly distributed random integers between 0 to 50
-A = np.random.randint(low=0, high=50, size=(20, 20))
-print(A)
+# pip install yfinance
+from datetime import datetime, timedelta
+import pandas as pd
+import plotly.graph_objects as go
+import yfinance as yf
+CURRENCY = 'EUR'
+def getData(crypto):
+  # Define time window
+    now = datetime.now()
+    current_date = now.strftime("%Y-%m-%d")
+    last_year_date = (now - timedelta(days=365)).strftime("%Y-%m-%d")
+    start = pd.to_datetime(last_year_date)
+    end = pd.to_datetime(current_date)
+    data = yf.download(tickers=f'{crypto}-{CURRENCY}', start = start, end = end , interval = '1d')
+    return data
 
-
-"""
-Scatter Plotting
-"""
-import matplotlib.pyplot as plt
-fig = plt.figure()  # Create a window to draw
-ax = plt.axes()  # Create axes
-ax.plot(np.arange(1,21), A, 'o')  # Plot the dots, using circle
-ax.set_title('Random Number Plotting')  # Set figure title
-plt.show()
-# Save figure to a high quality
-fig.savefig('random_scatter.png', dpi=300, transparent=True)
-fig.clear()  # clear the figure
-# Another plot: a time series
-x = np.random.randn(1000)
-# plt also provide a quick way to draw
-plt.plot(x,'.')    # Try other styles like ‘+’
-plt.title('Normal Distribution White Noise')
-plt.xlabel('i')  # Putting label on the axes
-plt.ylabel('x_i')
-plt.draw()
-plt.savefig('normal_dis_scatter.png', dpi=300)
+# Call function to retrieve data on Bitcoin 
+btc_data = getData('BTC')
+# eth_data = getData('ETH')
+# Plot graph
+fig = go.Figure(
+        data = [
+            go.Candlestick(
+                x = btc_data.index,
+                open = btc_data.Open,
+                high = btc_data.High,
+                low = btc_data.Low,
+                close = btc_data.Close
+            ) 
+        ] )
+fig.update_layout(
+    title = f'Time Series with Range slider for BTC',
+    xaxis_title = 'Date',
+    yaxis_title = f'Price ({CURRENCY})',
+    xaxis_rangeslider_visible = True
+)
+fig.update_yaxes(tickprefix=CURRENCY)
+fig.show()
 
 
 """
