@@ -6,11 +6,14 @@ Created time: 28.11.2019
 """
 import os
 import pandas as pd
-from sudachipy import tokenizer, dictionary
-# pip3 install SudachiPy if package not found
+import pip
+# pip3 install SudachiPy
+# pip3 install sudachidict_core
 # CorePackage:
 # pip install https://object-storage.tyo2.conoha.io/v1/nc_2520839e1f9641b08211a5c85243124a/sudachi/SudachiDict_core-20191030.tar.gz
 # More information: https://github.com/WorksApplications/SudachiPy
+from sudachipy import tokenizer, dictionary
+
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
@@ -24,10 +27,10 @@ def TokenCleanText(tker, mode, text):
 
 # Read and Pre-process Data
 cwd = os.getcwd()
-full_text = pd.read_csv(cwd + '/DEDA_NLP/yahoo_jp.csv', sep=';')['text'].values
+full_text = pd.read_csv(cwd + '/yahoo_jp.csv', sep=';')['text'].values
 
 # Define Stopping Words
-with open(cwd + '/DEDA_NLP/stopwords-ja.txt', 'r+') as sw_file:
+with open(cwd + '/stopwords-ja.txt', 'r+') as sw_file:
     sw = sw_file.read().splitlines()  # Define stop words and punctuation, not perfect!
 sw.extend(['\n', '\n\n'])
 
@@ -39,7 +42,7 @@ clean_words = [word for txt in full_text_clean for word in txt]
 
 # Create WordCloud
 stopwords = set(STOPWORDS)
-font_path = cwd + '/DEDA_NLP/NotoSansCJKjp.otf'
+font_path = cwd + '/NotoSansCJKjp.otf'
 plt.figure(figsize=(20, 10))
 wordcloud = WordCloud(max_words=300, font_path=font_path,
                       stopwords=stopwords, width=1600,
@@ -48,4 +51,4 @@ plt.imshow(wordcloud)
 plt.axis("off")
 plt.tight_layout()
 plt.show()
-plt.savefig(cwd + '/DEDA_NLP/wordcloud_jp.png', dpi=300)
+plt.savefig(cwd + '/wordcloud_jp.png', dpi=300)
