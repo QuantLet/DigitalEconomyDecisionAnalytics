@@ -4,7 +4,7 @@ Published in: 'DEDA class 2022'
 
 Description: 'Negentropy approximation and comparison'
 
-Submitted:  '15 Jul 2022'
+Submitted:  '19 Jul 2022'
 
 Keywords: 
 - 'Negentropy approximation'
@@ -23,6 +23,14 @@ Output:
 - 'Negentropy Comparison (N=5000).png'
 - 'Negentropy Comparison (N=10000).png'
 - 'Negentropy Comparison (N=50000).png'
+- 'QQ plot of y (p=0.0).png'
+- 'QQ plot of y (p=0.25).png'
+- 'QQ plot of y (p=0.45).png'
+- 'QQ plot of y (p=0.7).png'
+- 'QQ plot of y (p=0.83).png'
+-- 'QQ plot of y (p=0.9).png'
+- 'QQ plot of y (p=0.95).png'
+- 'QQ plot of y (p=1.0).png'
 
 Author: 
 - 'Jane Hsieh (Hsing-Chuan Hsieh)'
