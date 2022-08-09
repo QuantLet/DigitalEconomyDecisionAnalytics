@@ -1,0 +1,37 @@
+Name of Quantlet: 'FRM Data Analysis_Porfolio Construction_with ICA-PCA'
+
+Published in: 'DEDA class 2022'
+
+Description: 'Analyze financial data (daily returns of 15 stocks in Asia market) - show the difference between results of PCA and ICA'
+
+Submitted:  '09 Aug 2022'
+
+Keywords: 
+- 'Independent Component Analysis (ICA)'
+- 'Principal Component Analysis (PCA)'
+- 'Profile Construction'
+- 'Financial data (Stock market data)'
+- 'Daily Returns'
+
+Input: 'the module–"FRM Data Analysis_Porfolio Construction_with ICA-PCA.py" is used to analyzie financial data for portfolio construction, and show the different results of ICA and PCA.'
+
+Datafile:
+- 'FRM_CHHKTW_Time_Series_Returns_20201030.csv'
+- 'FRM_SHSZ300HSITWSE_Stock_Prices_update_20201030.csv'
+
+
+Output: 
+- 'Multidimensional Daily Prices (FRM) from 2019-01-02 to 2020-10-30 (15D).png'
+- 'Multidimensional Daily Returns (FRM) from 2019-01-02 to 2020-10-30 (15D).png'
+- 'Compare estimates of (rescaled) W matrix from PCA-ICA.png'
+- 'Compare estimates of portfolio returns from PCA-ICA.png'
+- 'Compare estimates of portfolio returns from PCA-ICA 2.png'
+- 'Compare cumulative returns from PCA-ICA.png'
+- 'Compare cumulative returns from PCA-ICA 2.png'
+- 'Test- Compare estimates of portfolio returns from PCA-ICA.png'
+- 'Test- Compare cumulative returns from PCA-ICA.png'
+
+
+Author: 
+- 'Jane Hsieh (Hsing-Chuan Hsieh)'
+- 'Wolfgang Karl Härdle'
