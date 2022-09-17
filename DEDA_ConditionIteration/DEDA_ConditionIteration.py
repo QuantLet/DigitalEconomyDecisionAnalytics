@@ -79,8 +79,8 @@ creator_tuple = ('Guido van Rossum', 65, 'Dutch')
 creator_list = ['Guido van Rossum', 65, 'Dutch']
 # accessing tuples works like accessing lists, however … 
 # … tuple do not support item assignment while lists do
-creator_tuple[0] = 'G.v. Rossum' # TypeError! Python stops. 
-creator_list[0] = 'G.v. Rossum' # ['G.v. Rossum', 65, 'Dutch']
+# creator_tuple[0] = 'G.v. Rossum' # TypeError! Python stops.
+# creator_list[0] = 'G.v. Rossum' # ['G.v. Rossum', 65, 'Dutch']
 
                 
 """
@@ -196,12 +196,12 @@ print(intros) # ['Introduction Chapter', 'WebScrapingIntro Chapter']
 # example 2
 for repo, unit, intro  in zip(repos, units, intros):
     if repo + ' Chapter' != intro:
-     print(f'{unit} is not of introductory nature.')
-     break # stops whole loop
+        print(f'{unit} is not of introductory nature.')
+        break # stops whole loop
     elif repo + ' Chapter' == intro:
-        continue # rejects all remaining statements and continues with next iteration 
- else: 
-     print('Something went wrong.')
+        continue # rejects all remaining statements and continues with next iteration
+    else:
+        print('Something went wrong.')
 
               
 """
@@ -219,11 +219,13 @@ for word in our_class:
         for letter in word:
             if letter.isupper() is True:
                 print(letter)
+
 # infinite loop
-num = 0
-while True:
-    print(num)
-    num +=1
+# This will run infinitely if you remove the comment sign #
+#num = 0
+#while True:
+    #print(num)
+    #num +=1
 
              
 """
@@ -257,14 +259,18 @@ try:
     shakespeare = open('shakespeare.txt', 'r', encoding='utf-8')
     for line in shakespeare.readlines():
         print(line.strip()) #removes leading and trailing whitespaces 
-finally:
+except:
+    print("Reading the file didn't work!")
+else:
     shakespeare.close()
 # simplified: 
 try:
     shakespeare = open('shakespeare.txt') # 'r' and 'utf-8' are set by default
     for string in shakespeare: # no need to call readlines() explicitly, it’s the default
         print(string.strip())
-finally:
+except:
+    print("Reading the file didn't work!")
+else:
     shakespeare.close()
                        
                        
