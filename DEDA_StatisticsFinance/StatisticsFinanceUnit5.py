@@ -95,7 +95,7 @@ from PIL import Image
 from numpy.fft import fft,ifft
 import numpy as np
 # Open the image by using Python Imaging Library(PIL)
-image_before=Image.open(‘berlin_view.jpg')
+image_before=Image.open('berlin_view.jpg')
 # Decoding and encoding image to float number
 image_int=np.fromstring(image_before.tobytes(), dtype=np.int8)
 # Processing Fourier transform
@@ -161,7 +161,7 @@ plt.savefig("filename.png", transparent=True)
 
                         
 """
-Kerner Density Estimation
+Kernel Density Estimation
 """
 
 import numpy as np
