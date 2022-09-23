@@ -1,7 +1,7 @@
 """
 DEDA Unit 5
 Basic Statistics and Visualisation in Python
-Authors: Junjie Hu and Isabell Fetzer 
+Authors: Junjie Hu and Isabell Fetzer, 20220924 WKH 
 """
 
 
