@@ -51,6 +51,17 @@ fig.update_yaxes(tickprefix=CURRENCY)
 fig.show()
 
 
+
+"""
+Generating numbers in numpy array
+"""
+
+# Giving the seed of random number generator
+np.random.seed(1)
+# Generate a 20*20 matrix with uniformly distributed random integers between 0 to 50
+A = np.random.randint(low=0, high=50, size=(20, 20))
+print(A)
+
 """
 Matrix Operations
 """
