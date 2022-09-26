@@ -16,6 +16,8 @@ from datetime import datetime, timedelta
 import pandas as pd
 import plotly.graph_objects as go
 import yfinance as yf
+import numpy as np
+
 CURRENCY = 'EUR'
 def getData(crypto):
   # Define time window
