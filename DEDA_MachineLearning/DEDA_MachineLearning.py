@@ -42,7 +42,13 @@ print('\nThe predicted result is:\n', clf.predict(test_data))
 print('\nAccuracy rate is:\n', acc_rate(test_target, clf.predict(test_data)))
 
 # visualizing the tree
+'''
+If this message appears: 
+  ExecutableNotFound: failed to execute PosixPath('dot'), make sure the Graphviz executables are on your systems' PATH
 
+type the following in the console:
+  conda install python-graphviz
+'''
 dot_data = tree.export_graphviz(clf,
                                 out_file=None,
                                 feature_names=iris.feature_names,
