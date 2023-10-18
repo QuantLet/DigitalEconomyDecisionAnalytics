@@ -231,7 +231,8 @@ np.random.seed(100)
 n = 500  # Number of random numbers
 msize = 0.1  # determines the size of the plotted points
 # a good size might be msize=5 for n=500 pts and msize=0.1 for n>50K  
-a = np.random.exponential(scale=1, size=n)
+x = -np.log( np.random.uniform(low=0, high=1, size=n )) # creates an Exp(1) rv’s
+a = np.sqrt( 2*x )
 phi = np.random.uniform(low=0, high=2 * np.pi, size=n)
 # Change to cartesian coordinates
 x = a * np.cos(phi)
