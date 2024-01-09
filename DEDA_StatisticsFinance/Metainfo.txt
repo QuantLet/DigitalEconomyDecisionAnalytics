@@ -16,4 +16,4 @@ Keywords :
 - KDE
 - Black-Scholes
 - Implied Volatility
-Author : Junjie Hu, Yves Hilpisch, Justin Hellermann, Isabell Fetzer, WK Härdle (20231015, Fudan U)
+Author : Junjie HU, Isabell Fetzer, WK Härdle, Xiaorui ZUO (20231015, Fudan U)
