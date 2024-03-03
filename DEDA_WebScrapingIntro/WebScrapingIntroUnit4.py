@@ -265,11 +265,17 @@ def weather_collection(link):
         # month_weather.append(daily_weather)
     return month_weather
 
-# Nice way to get a date string with certain format
-years = np.arange(start=2020, stop=2020)
-months = np.arange(start=1, stop=13)
-it = list(itertools.product(years, months))
-date = [str(ele[0]) + format(ele[1], '02d') for ele in it]  # '02d' means 2 digits
+import datetime
+start_year = 2023
+end_year = 2024  # This is exclusive, so it will stop at 2020
+dates = [
+    (start_year + i // 12, i % 12 + 1)  # Calculate year and month
+    for i in range((end_year - start_year) * 12)
+]
+date = [
+    f"{year}{month:02d}"  # Format the date as 'YYYYMM'
+    for year, month in dates
+]
 
 #  ==== We have already download the links to all the cities=====
 #  ==== Otherwise, uncomment the function below to retrieve provinces information ======
