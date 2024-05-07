@@ -26,6 +26,9 @@ def TokenCleanText(tker, mode, text):
 # Read and Pre-process Data
 cwd = os.getcwd()
 full_text = pd.read_csv(cwd + '/yahoo_jp.csv', sep=';')['text'].values
+# you might also check this Japanese text that is stored in a *.txt file
+# with open("20240507 Japanese News.txt",'r') as fp:
+#    full_text = fp.read()
 
 # Define Stopping Words
 with open(cwd + '/stopwords-ja.txt', 'r+') as sw_file:
