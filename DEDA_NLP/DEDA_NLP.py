@@ -1,12 +1,13 @@
 """
 Create a word cloud out of Japanese news text from Yahoo
 
-Author: Junjie Hu
-Created time: 28.11.2019
+Author: Junjie Hu, Xiaorui ZUO
+Created time: 20240507
 """
 import os
 import pandas as pd
 from sudachipy import tokenizer, dictionary
+# this may be necessary to pre-install, depending on your settings
 # pip3 install SudachiPy if package not found
 # CorePackage:
 # pip install sudachipy sudachidict_core
