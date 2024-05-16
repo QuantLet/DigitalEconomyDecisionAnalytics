@@ -25,5 +25,5 @@ print('\nAccuracy rate is:\n', accuracy_score(test_target, clf.predict(test_data
 fig, ax = plt.subplots(figsize=(12, 12))  # Set appropriate size according to your needs
 tree.plot_tree(clf, filled=True, rounded=True,
                feature_names=iris.feature_names,
-               class_names=iris.target_names)
+               class_names=list(iris.target_names))
 plt.show()
