@@ -170,8 +170,6 @@ if r == r2: # Here we use == to validate if two responses of two url are equal
     print("Two urls are the same")
 else:
     print("Two urls are not the same")
-# Print out the titles
-titles = r.get_titles()
 
 
 """
