@@ -9,77 +9,66 @@ Authors: Isabell Fetzer and Junjie Hu
 Web Scraping encompasses any method allowing for extracting data from websites. Requests allows us to send an HTTP request to a webpage. BeautifulSoup parses the HTML in order to retrieve the desired information. 
 Project: We wish to scrape the first page of the South China Morning Post’s news website. We acquire data about the news title, the news link and the news publication date and produce a tabular output stored as .csv file. 
 """
-# Load moduls 
+# Load modules
 import requests
 from bs4 import BeautifulSoup as soup
-from datetime import datetime, date # needed to retrieve the date of publication 
-# Receiving source code from the South China Morning Post website 
+from datetime import datetime, date
+
+# Receiving source code from the South China Morning Post website
 scmp_url = 'https://www.scmp.com/knowledge/topics/china-economy/news'
 url_request = requests.get(scmp_url)
 
+# Returns the content of the response
+url_content = url_request.content
 
-"""
-After accessing the HTML page, BeautifulSoup allows for ‘parsing’ the webpage source code, i.e. analysing its syntax. In this regard, regular expression is extensively used. 
-"""
-# Returns the content of the response,  …
-url_content = url_request.content # … in bytes
-url_text = url_request.text # … in unicode
 # Using BeautifulSoup to parse webpage source code
-parsed_content = soup(url_content)
-parsed_text = soup(url_text, 'lxml') # ‘html.parser’ also possible
+parsed_content = soup(url_content, 'html.parser')
 
+# Find all news sections
+filtered_parts = parsed_content.find_all('div', class_="sc-1yocfo6-0")
+page_info = []
 
-"""
-There are some of the most versatile methods in BeautifulSoup: 
-find_all() retrieves matching tags from all the nested HTML tags, which are called descendants. If a list is passed in, all matching objects will be retrieved. 
-"""
-filtered_parts = parsed_text.find_all('div', class_ = "sc-bdfBwQ cMShZj") 
-page_info = list() # create empty list 
-# For loop iterates over every line in text 
-for section in filtered_parts: 
-    unit_info = dict() # create empty dictionary where we gradually attach items to
-    # (1) Filter title, link and text content 
-    filtered_part1 = section.find_all('a', class_ = "sc-hKgILt") 
-    # print(filtered_part1[0])
-    # (2) Refilter to obtain date
-    filtered_part2 = section.find_all('span', class_ = 'sc-iqHYGH hkvqJt') # for date 
-    # print(filtered_part2[0])
-    if filtered_part1 == []: # Error handling 
+# For loop iterates over every line in text
+for section in filtered_parts:
+    unit_info = {}
+
+    # (1) Filter title, link, and text content
+    filtered_part1 = section.find_all('a', class_="sc-1ij6sn6-0")
+    if len(filtered_part1) < 2:
         continue
-    # (1) Filter title and link
-    news_title = filtered_part1[2].text.strip() # find title item
-    news_link = filtered_part1[0].get('href').strip() # find title item
-    news_link = f"https://www.scmp.com{news_link}" # adjust link
-    #print(news_title)
-    #print(news_link)
-    # Scanning scraped text (filtered_part1) for right titles 
-    news_text = filtered_part1[3].text.strip() # find text 
-    # print(news_link)
-    # Correcting title errors 
-    if section == filtered_parts[0]:
-      news_title = news_title.replace(news_title, news_text) 
-    for line in news_title: 
-      if "|" in line: 
-        news_title = f"{news_title} {news_text}"
-    unit_info['news_title'] = news_title # add news_title to the dictionary
-    unit_info['news_link'] = news_link # add news_link to the dictionary
-
-     # (2) Filter date 
-    try:
-      news_date = datetime.strptime(filtered_part2[0].text.strip(),'%d %b %Y - %H:%M%p')
-      news_date = news_date.date() # cuts off the time 
-      # print(news_date)
-    except:
-      t_day = date.today()
-      date_series = filtered_part2[0].text.strip()
-      if (date_series.endswith('hours ago')) or (date_series[1].startswith('minutes ago')):
-        news_date = t_day
-      else:
-        news_date = t_day
     
-    unit_info['news_time'] = news_date # add news_date to the dictionary
-    page_info.append(unit_info) # attach dictionary to list
-print(page_info)
+    # Extract the title and link from the section
+    news_title = filtered_part1[1].text.strip() if len(filtered_part1) > 1 else ''
+    news_link = filtered_part1[1].get('href').strip() if len(filtered_part1) > 1 else ''
+    news_link = f"https://www.scmp.com{news_link}"  # adjust the relative link
+    
+    # Filter the description text (optional if needed)
+    news_text = filtered_part1[0].text.strip() if len(filtered_part1) > 0 else ''
+    
+    # (2) Filter date
+    filtered_part2 = section.find_all('time', datetime=True)
+    if filtered_part2:
+        try:
+            # Parse the date format (example format: 2 Aug 2024 - 10:15PM)
+            news_date = datetime.strptime(filtered_part2[0].text.strip(), '%d %b %Y - %I:%M%p')
+            news_date = news_date.date()  # only keep the date part
+        except ValueError:
+            # If parsing fails, fallback to today's date
+            news_date = date.today()
+    else:
+        news_date = date.today()
+    
+    # Add all info into the dictionary
+    unit_info['news_title'] = news_title
+    unit_info['news_link'] = news_link
+    unit_info['news_text'] = news_text
+    unit_info['news_date'] = news_date
+    
+    page_info.append(unit_info)
+
+# Print the collected information
+for info in page_info:
+    print(info)
 
 # Load moduls 
 import pandas as pd
