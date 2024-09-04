@@ -1,7 +1,8 @@
 """
 DEDA Unit 3
 Introduction of Web Scraping in Python
-Authors: Isabell Fetzer and Junjie Hu
+Authors: WK Härdle Xiaorui ZUO
+Date: 20240904
 """
 
 
@@ -15,8 +16,19 @@ import requests
 import xml.dom.minidom
 response = requests.get("https://home.treasury.gov/sites/default/files/interest-rates/daily_treas_bill_rates.xml")
 content = response.content
+"""
+Now let us have a look at this web page content  
+"""
+print(content)
+
+"""
+One more time, this time on a google site  
+"""
 dataDOM = xml.dom.minidom.parseString(content)
 response = requests.get("https://news.google.com/news/rss/headlines/section/q/finance%20news/finance%20news?ned=us&hl=en")
+content = response.content
+
+print(content)
 
 """
 Reading JSON Data Online
@@ -34,7 +46,8 @@ Year = [item['Year'] for item in content]
 Count = [item['Count'] for item in content]
 Info = zip(Year, Count)
 PassportData = pd.DataFrame(list(Info), columns=['Year', 'Count'])
-# print(PassportData)
+
+print(PassportData)
 
 
 """
