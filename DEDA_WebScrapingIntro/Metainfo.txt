@@ -10,7 +10,8 @@ Keywords :
 - HTML
 - BeautifulSoup
 - OOP
-Author : Junjie Hu, Cathy YH Chen, Isabell Fetzer
+- China Daily Scraping
+Author : Xiaorui ZUO, Isabell Fetzer, Wolfgang Karl Härdle, Hua LEI
 
 
 
