@@ -3,7 +3,7 @@
 """
 Created on Thu Sep 26 01:48:27 2024
 
-@author: haerdle
+@author: Hua LEI, Wolfgang Karl Härdle
 """
 # Load modules
 import requests
