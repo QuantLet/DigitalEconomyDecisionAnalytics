@@ -1,0 +1,15 @@
+Name of QuantLet : AI For Music Analysis
+
+Published in : 'DEDA'
+
+Description : 'Smoothing, Feature Comparison, and Component Analysis'
+
+Keywords : 'Smoothing, Feature Comparison, and Component Analysis'
+
+See also : ''
+
+Author : Xiaorui ZUO
+
+Submitted : April 2026 by Xiaorui ZUO
+
+Example : 
