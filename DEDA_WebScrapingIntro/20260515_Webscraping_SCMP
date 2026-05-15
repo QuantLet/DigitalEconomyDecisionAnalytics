@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+from datetime import datetime, date
+
+
+url = "https://www.scmp.com/knowledge/topics/china-economy/news"
+
+headers = {
+    "User-Agent": "Mozilla/5.0"
+}
+
+response = requests.get(url, headers=headers, timeout=20)
+response.raise_for_status()
+
+soup = BeautifulSoup(response.text, "html.parser")
+
+page_info = []
+
+for a in soup.find_all("a", href=True):
+
+    news_title = a.get_text(" ", strip=True)
+    news_link = urljoin(url, a["href"])
+
+    # keep only meaningful article titles
+    if len(news_title) < 25:
+        continue
+
+    # keep only SCMP article links
+    if "scmp.com" not in news_link:
+        continue
+
+    if "/article/" not in news_link:
+        continue
+
+    # remove app / author / footer links
+    bad_words = [
+        "download",
+        "subscribe",
+        "mobile",
+        "authors",
+        "advertise",
+        "all topics"
+    ]
+
+    if any(w in news_title.lower() for w in bad_words):
+        continue
+
+    page_info.append({
+        "news_title": news_title,
+        "news_link": news_link,
+        "news_date": date.today()
+    })
+
+
+df = pd.DataFrame(page_info)
+
+df = df.drop_duplicates(subset=["news_link"])
+df = df.reset_index(drop=True)
+
+print(df)
+
+df.to_csv("SCMP_Scraped_News.csv", index=False, encoding="utf-8-sig")
