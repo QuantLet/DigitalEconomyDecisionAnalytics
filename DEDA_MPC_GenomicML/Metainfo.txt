@@ -1,0 +1,28 @@
+Name of Quantlet : DEDA_MPC_GenomicML
+
+Published in : Digital Economy and Decision Analytics
+
+Description :
+- Demonstrate Multi-Party Computation (MPC) for privacy-preserving supervised
+  machine learning over genomic data
+- Simulate a secure logistic regression for disease risk prediction
+  (case-control setting) without revealing individual genotypes
+- Illustrate Polygenic Risk Score (PRS) computation via LASSO under MPC
+- Show how MPC secret-sharing enables collaborative model training across
+  multiple data holders (hospitals / biobanks) without sharing raw data
+
+Keywords :
+- Python
+- MPC
+- Multi-Party Computation
+- Secret Sharing
+- Genomic Data
+- Disease Risk Prediction
+- Polygenic Risk Score
+- PRS
+- Logistic Regression
+- LASSO
+- Privacy-Preserving Machine Learning
+- Federated Learning
+
+Author : Pavel Shibaev
