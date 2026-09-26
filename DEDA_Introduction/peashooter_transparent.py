@@ -128,14 +128,17 @@ fig_static.savefig('peashooter_static.png', transparent=True, facecolor='none', 
 plt.close(fig_static)
 
 # Animation setup
+# Mouth movements per second; increase this value for faster firing.
+mouth_frequency = 2.0
+
 def init_plot():
     trunk.set_data([], [])
     eye.set_data([], [])
     return trunk, eye
 
 def move_trunk(i):
-    x, y = peashooter(linspace(0.4 + 1.7 * pi, 2 * pi + 0.8 * pi, 1000), parameters)
-    phase = 2 * pi * i / 100
+    x, y = peashooter(linspace(2 * pi + 0.8 * pi, 0.4 + 3.7 * pi, 1000), parameters)
+    phase = 2 * pi * mouth_frequency * i / 20
     for ii in range(len(y) - 1):
         y[ii] -= sin(((x[ii] - x[0]) * pi / len(y))) * sin(phase) * parameters[4].real
     trunk.set_data(x[:-1], y[:-1])
@@ -152,10 +155,8 @@ ax.set_ylim([min(y_static) - 20, max(y_static) + 20])
 ax.axis('off')
 ax.set_aspect('equal')
 
-# Draw the fixed body: the complementary part of the closed outline.
-# The moving section ends at 2*pi + 0.8*pi; continue to its start
-# in the next period so that both sections meet at their endpoints.
-t_body = linspace(2 * pi + 0.8 * pi, 0.4 + 3.7 * pi, 1000)
+# Keep the lower body and legs fixed; animate the complementary head/mouth arc.
+t_body = linspace(0.4 + 1.7 * pi, 2 * pi + 0.8 * pi, 1000)
 x_body, y_body = peashooter(t_body, parameters)
 ax.plot(x_body[:-1], y_body[:-1], 'b-', linewidth=5)
 
@@ -174,7 +175,7 @@ ani = animation.FuncAnimation(fig=fig,
 # Use the same output paths and GIF-saving procedure as rabbit.
 output_directory = Path(__file__).resolve().parent
 temporary_gif = output_directory / "peashooter_wiggle_temporary.gif"
-gif_output = output_directory / "peashooter_wiggle_transparent.gif"
+gif_output = output_directory / "peashooter_mouth_transparent.gif"
 
 # Force the temporary animation to be fully opaque. This avoids a bug in
 # Matplotlib 3.10.0's handling of transparent PillowWriter frames.
