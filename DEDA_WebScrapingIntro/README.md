@@ -9,7 +9,7 @@ Name of Quantlet: DEDA_WebScrapingIntro
 
 Published in: Digital Economy and Decision Analytics
 
-Description: UNIT 3 and UNIT 4 of DEDA. Introduce webscraping and object-oriented programming
+Description: UNIT 3 and UNIT 4 of DEDA. Introduce webscraping and object-oriented programming, Download from FRED for T-bills added
 
 Keywords: 
 - Python
@@ -22,6 +22,6 @@ Keywords:
 - OOP
 - China Daily Scraping
 
-Author: Xiaorui ZUO, Isabell Fetzer, Wolfgang Karl Härdle, Hua LEI
+Author: Xiaorui ZUO, Isabell Fetzer, Wolfgang Karl Härdle, Hua LEI (20260515 Chinadaily scraping improved)
 
 ```
