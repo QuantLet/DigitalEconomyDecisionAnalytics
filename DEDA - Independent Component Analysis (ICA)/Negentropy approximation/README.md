@@ -14,42 +14,42 @@ Description: Negentropy approximation and comparison
 Submitted: 25 Jul 2022
 
 Keywords: 
-- 'Negentropy approximation
-- 'Entropy
-- 'Maximum entropy method
-- 'Contrast function
-- 'Gaussian mixture variable
-- 'Independent Component Analysis (ICA)
+- Negentropy approximation
+- Entropy
+- Maximum entropy method
+- Contrast function
+- Gaussian mixture variable
+- Independent Component Analysis (ICA)
 
 Input: Negentropy approximation for ICA analysis
 
 Output: 
-- 'Negentropy Comparison (N=1000).png
-- 'Negentropy Comparison (N=5000).png
-- 'Negentropy Comparison (N=10000).png
-- 'Negentropy Comparison (N=50000).png
-- 'QQ plot of y (p=0.0).png
-- 'QQ plot of y (p=0.25).png
-- 'QQ plot of y (p=0.45).png
-- 'QQ plot of y (p=0.7).png
-- 'QQ plot of y (p=0.83).png
-- 'QQ plot of y (p=0.9).png
-- 'QQ plot of y (p=0.95).png
-- 'QQ plot of y (p=0.98).png
-- 'QQ plot of y (p=1.0).png
-- 'Histogram of y (p=0.0).png
-- 'Histogram of y (p=0.25).png
-- 'Histogram of y (p=0.45).png
-- 'Histogram of y (p=0.7).png
-- 'Histogram of y (p=0.83).png
-- 'Histogram of y (p=0.9).png
-- 'Histogram of y (p=0.95).png
-- 'Histogram of y (p=0.98).png
-- 'Histogram of y (p=1.0).png
+- Negentropy Comparison (N=1000).png
+- Negentropy Comparison (N=5000).png
+- Negentropy Comparison (N=10000).png
+- Negentropy Comparison (N=50000).png
+- QQ plot of y (p=0.0).png
+- QQ plot of y (p=0.25).png
+- QQ plot of y (p=0.45).png
+- QQ plot of y (p=0.7).png
+- QQ plot of y (p=0.83).png
+- QQ plot of y (p=0.9).png
+- QQ plot of y (p=0.95).png
+- QQ plot of y (p=0.98).png
+- QQ plot of y (p=1.0).png
+- Histogram of y (p=0.0).png
+- Histogram of y (p=0.25).png
+- Histogram of y (p=0.45).png
+- Histogram of y (p=0.7).png
+- Histogram of y (p=0.83).png
+- Histogram of y (p=0.9).png
+- Histogram of y (p=0.95).png
+- Histogram of y (p=0.98).png
+- Histogram of y (p=1.0).png
 
 Author: 
-- 'Jane Hsieh (Hsing-Chuan Hsieh)
-- 'Wolfgang Karl Härdle
+- Jane Hsieh (Hsing-Chuan Hsieh)
+- Wolfgang Karl Härdle
 
 ```
 <div align="center">
