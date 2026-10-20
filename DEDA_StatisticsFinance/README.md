@@ -27,7 +27,7 @@ Keywords:
 - Black-Scholes
 - Implied Volatility
 
-Author: Junjie HU, Isabell Fetzer, WK Härdle, Xiaorui ZUO (20231015, Fudan U)
+Author: Junjie HU, Isabell Fetzer, WK Härdle (20250711 Normal 3D plot), Xiaorui ZUO (20231015, Fudan U), AT Ginavar (20250827 Normal 3D Movie)
 
 ```
 <div align="center">
