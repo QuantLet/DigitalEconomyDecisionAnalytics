@@ -14,24 +14,24 @@ Description: Use standard HMM package (i.e., hmmlearn) to analyze the data with 
 Submitted: 08 Jan 2021
 
 Keywords: 
-- 'Hidden Markov Model (HMM)
-- 'hmmlearn
-- 'GaussianHMM
-- 'GMMHMM
-- 'heart rate data (bpm)
+- Hidden Markov Model (HMM)
+- hmmlearn
+- GaussianHMM
+- GMMHMM
+- heart rate data (bpm)
 
 Input: the module–"Generate_Dice_Sample.py" is used to generate fair and loaded dice simulation data, which is the same with codes in "Step1. Generate Fair and Loaded Dice Sample" folder
 
 Datafile: HeartWatch-Details-20201002-to-20201228.csv
 
 Output: 
-- 'Raw data visualization.png
-- 'Clean data visualization (regularized 5min interval).png
-- 'GMM-HMM Results- Heart Rate with different number of hidden states.png
+- Raw data visualization.png
+- Clean data visualization (regularized 5min interval).png
+- GMM-HMM Results- Heart Rate with different number of hidden states.png
 
 Author: 
-- 'Jane Hsieh (Hsing-Chuan Hsieh)
-- 'Wolfgang Karl Härdle
+- Jane Hsieh (Hsing-Chuan Hsieh)
+- Wolfgang Karl Härdle
 
 ```
 <div align="center">
