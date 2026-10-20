@@ -14,20 +14,20 @@ Description: Generate random sample – Observations & Hidden states of dice (wi
 Submitted: 01 Jan 2021
 
 Keywords: 
-- 'Hidden Markov Model
-- 'HMM
-- 'Casino Dice simulation data
-- 'Fair Dice
-- 'Loaded Dice
+- Hidden Markov Model
+- HMM
+- Casino Dice simulation data
+- Fair Dice
+- Loaded Dice
 
 Output: 
-- 'Sample_Obs.csv
-- 'Sample_Hid.csv
-- 'First 200 cases of dice sequence.png
+- Sample_Obs.csv
+- Sample_Hid.csv
+- First 200 cases of dice sequence.png
 
 Author: 
-- 'Jane Hsieh (Hsing-Chuan Hsieh)
-- 'Wolfgang Karl Härdle
+- Jane Hsieh (Hsing-Chuan Hsieh)
+- Wolfgang Karl Härdle
 
 ```
 <div align="center">
