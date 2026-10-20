@@ -17,7 +17,8 @@ Keywords:
 - Data Science
 - Economy
 - Decision
+- Elephant
 
-Author: Junjie Hu and Isabell Fetzer and Lucas Umann
+Author: Junjie Hu and Isabell Fetzer and Lucas Umann and WK Härdle 20260404, Ruiqi Liu for the rabbit 20260923
 
 ```
