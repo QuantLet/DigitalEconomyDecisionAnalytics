@@ -14,29 +14,29 @@ Description: Show that uncorrelatedness does not imply independence - the differ
 Submitted: 25 Jul 2022
 
 Keywords: 
-- 'Independent Component Analysis (ICA)
-- 'Uncorrelatedness
-- 'Independence
-- 'PCA
-- 'Simulated Gaussian mixture data
+- Independent Component Analysis (ICA)
+- Uncorrelatedness
+- Independence
+- PCA
+- Simulated Gaussian mixture data
 
 Input: to generate simulation  Gaussian mixture data, and show the different results of ICA and PCA (the previouos derives independent signals, while the latter only the uncorrelated ones)
 
 Output: 
-- 'Y.html
-- 'X.html
-- 'Y_Mahalanobis.html
-- 'Y_ICA.html
-- 'Y_PCA.html
-- 'Y_FA.html
-- 'Generated independent i.i.d. source signals Y.png
-- 'Extracted Uncorrelated i.i.d. signals Y.png
-- 'Compare source and mixing data (artificial).png
-- 'Compare estimates of source data from PCA-FA-ICA (artificial).png
+- Y.html
+- X.html
+- Y_Mahalanobis.html
+- Y_ICA.html
+- Y_PCA.html
+- Y_FA.html
+- Generated independent i.i.d. source signals Y.png
+- Extracted Uncorrelated i.i.d. signals Y.png
+- Compare source and mixing data (artificial).png
+- Compare estimates of source data from PCA-FA-ICA (artificial).png
 
 Author: 
-- 'Jane Hsieh (Hsing-Chuan Hsieh)
-- 'Wolfgang Karl Härdle
+- Jane Hsieh (Hsing-Chuan Hsieh)
+- Wolfgang Karl Härdle
 
 ```
 <div align="center">
