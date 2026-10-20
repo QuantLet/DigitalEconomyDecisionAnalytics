@@ -14,19 +14,19 @@ Description: Use standard HMM package (i.e., hmmlearn) to analyze the data with 
 Submitted: 01 Jan 2021
 
 Keywords: 
-- 'Hidden Markov Model (HMM)
-- 'hmmlearn
-- 'MultinomialHMM
-- 'Casino fair and loaded dice simulation data
-- 'Baum-Welch (EM) Algorithm
+- Hidden Markov Model (HMM)
+- hmmlearn
+- MultinomialHMM
+- Casino fair and loaded dice simulation data
+- Baum-Welch (EM) Algorithm
 
 Input: the module–"Generate_Dice_Sample.py" is used to generate fair and loaded dice simulation data, which is the same with codes in "Step1. Generate Fair and Loaded Dice Sample" folder
 
 Output: First 300 cases of dice sequence.png
 
 Author: 
-- 'Jane Hsieh (Hsing-Chuan Hsieh)
-- 'Wolfgang Karl Härdle
+- Jane Hsieh (Hsing-Chuan Hsieh)
+- Wolfgang Karl Härdle
 
 ```
 <div align="center">
