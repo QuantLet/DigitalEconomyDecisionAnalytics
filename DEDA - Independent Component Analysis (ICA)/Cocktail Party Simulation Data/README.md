@@ -14,34 +14,34 @@ Description: Solve Cocktail Party Problem (Blind source separation) - show the d
 Submitted: 01 Jul 2022
 
 Keywords: 
-- 'Cocktail Party Problem
-- 'Blind source separation
-- 'Independent Component Analysis (ICA)
-- 'Principal Component Analysis (PCA)
-- 'Factor Analysis
-- 'Audio data
+- Cocktail Party Problem
+- Blind source separation
+- Independent Component Analysis (ICA)
+- Principal Component Analysis (PCA)
+- Factor Analysis
+- Audio data
 
 Input: the module–"Blind source seperation with ICA-PCA-FA.py" is used to seperate mixed audio signals, and show the different results of ICA, FA and PCA.
 
 Datafile: 
-- 'mixedY.wav
-- 'mixedX.wav
-- 'sourceY.wav
-- 'sourceX.wav
+- mixedY.wav
+- mixedX.wav
+- sourceY.wav
+- sourceX.wav
 
 Output: 
-- 'PCA_Y1.wav
-- 'PCA_Y2.wav
-- 'ICA_Y1.wav
-- 'ICA_Y2.wav
-- 'FA_Y1.wav
-- 'FA_Y2.wav
-- 'Compare source and mixing data.png
-- 'Compare estimates of source data from PCA-FA-ICA.png
+- PCA_Y1.wav
+- PCA_Y2.wav
+- ICA_Y1.wav
+- ICA_Y2.wav
+- FA_Y1.wav
+- FA_Y2.wav
+- Compare source and mixing data.png
+- Compare estimates of source data from PCA-FA-ICA.png
 
 Author: 
-- 'Jane Hsieh (Hsing-Chuan Hsieh)
-- 'Wolfgang Karl Härdle
+- Jane Hsieh (Hsing-Chuan Hsieh)
+- Wolfgang Karl Härdle
 
 ```
 <div align="center">
