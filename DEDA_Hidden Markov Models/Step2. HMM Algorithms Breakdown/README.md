@@ -14,18 +14,18 @@ Description: Give a break down of the related algorithms in HMM – in Casino ca
 Submitted: 01 Jan 2021
 
 Keywords: 
-- 'Hidden Markov Model (HMM)
-- 'Casino fair and loaded dice simulation data
-- 'Forward Algorithm
-- 'Forward-Backward Algorithm
-- 'Viterbi Algorithm
+- Hidden Markov Model (HMM)
+- Casino fair and loaded dice simulation data
+- Forward Algorithm
+- Forward-Backward Algorithm
+- Viterbi Algorithm
 
 Datafile: Sample_Obs.csv
 
 Input: The datafile–"Sample_Obs.csv" is generated from codes in "Step1. Generate Fair and Loaded Dice Sample" folder
 
 Author: 
-- 'Jane Hsieh (Hsing-Chuan Hsieh)
-- 'Wolfgang Karl Härdle
+- Jane Hsieh (Hsing-Chuan Hsieh)
+- Wolfgang Karl Härdle
 
 ```
