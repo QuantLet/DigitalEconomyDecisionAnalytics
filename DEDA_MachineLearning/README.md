@@ -23,7 +23,7 @@ Keywords:
 - Support vector machine
 - Sentiment classification
 
-Author: Junjie Hu
+Author: Junjie Hu WK Härdle, upgraded to a newer KERAS, using codex, added a test example
 
 ```
 <div align="center">
