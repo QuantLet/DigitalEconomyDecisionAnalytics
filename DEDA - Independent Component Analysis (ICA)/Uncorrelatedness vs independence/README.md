@@ -14,21 +14,21 @@ Description: Show that uncorrelatedness does not imply independence - the differ
 Submitted: 01 Jul 2022
 
 Keywords: 
-- 'Independent Component Analysis (ICA)
-- 'Uncorrelatedness
-- 'Independence
-- 'PCA
-- 'Signal data
+- Independent Component Analysis (ICA)
+- Uncorrelatedness
+- Independence
+- PCA
+- Signal data
 
 Input: the module–"Uncorrelatedness_vs_independence.ipynb" is used to generate simulation signal data, and show the different results of ICA and PCA (the previouos derives independent signals, while the latter only the uncorrelated ones)
 
 Output: 
-- 'Compare source and mixing data (artificial).png
-- 'Compare estimates of source data from PCA-FA-ICA (artificial).png
+- Compare source and mixing data (artificial).png
+- Compare estimates of source data from PCA-FA-ICA (artificial).png
 
 Author: 
-- 'Jane Hsieh (Hsing-Chuan Hsieh)
-- 'Wolfgang Karl Härdle
+- Jane Hsieh (Hsing-Chuan Hsieh)
+- Wolfgang Karl Härdle
 
 ```
 <div align="center">
